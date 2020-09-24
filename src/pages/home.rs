@@ -7,6 +7,7 @@ use yew::prelude::*;
 
 use crate::types::Project;
 use crate::api;
+use crate::components::ProjectCard;
 
 struct State {
     projects: Vec<Project>,
@@ -88,17 +89,16 @@ impl Component for Home {
             .iter()
             .map(|project: &Project| {
                 html! {
-                    <div>
-                      <img src={&project.image}/>
-                      <div>{&project.name}</div>
-                      <div>{&project.year}</div>
-                    </div>
+                    <ProjectCard project={project}/>
                 }
             })
             .collect();
         if !self.state.get_projects_loaded {
             html! { 
-                <div>{"Loading..."}</div> 
+                <div class="loading_indication_container">
+                    <img class="loading_indicator" src="/img/wasm_logo.png"/>
+                    <div class="loading_indicator_text">{"Loading..."}</div>
+                </div> 
             }
         }
         else if let Some(_) = self.state.get_projects_error {
@@ -107,7 +107,7 @@ impl Component for Home {
             }
         }
         else {
-            html! { <span>{projects}</span> }
+            html! { <div class="project_card_list">{projects}</div> }
         }
     }
 }

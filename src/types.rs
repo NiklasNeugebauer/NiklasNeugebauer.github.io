@@ -1,7 +1,7 @@
 // src/lib.rs
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Clone, Debug)]
 pub struct Project {
     pub id: i32,
     pub name: String,

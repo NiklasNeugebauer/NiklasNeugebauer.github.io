@@ -1,5 +1,6 @@
 // src/lib.rs
 mod api;
+mod components;
 mod types;
 mod pages;
 
