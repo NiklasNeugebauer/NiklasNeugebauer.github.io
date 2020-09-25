@@ -30,8 +30,8 @@ jobs:
 
       - name: publish
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           rm docs/.gitignore
           git add docs
           git stash
