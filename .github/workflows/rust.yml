@@ -32,6 +32,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          rm docs/.gitignore
           git checkout publish
           mv .gitignore_publish .gitignore
           git add .
