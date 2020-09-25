@@ -20,7 +20,6 @@ jobs:
         with:
           toolchain: stable
       - uses: actions-rs/cargo@v1
-      - uses: davidB/rust-cargo-make@v1
       - uses: jetli/wasm-pack-action@v0.3.0
       - name: build
-        run: cargo make build
+        run: wasm-pack build --dev --target web --out-name wasm --out-dir ./static
