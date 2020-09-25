@@ -32,8 +32,8 @@ impl Component for ProjectCard {
     fn view(&self) -> Html {
         html! {
             <div class="project_card_container">
-              <img class="project_card_image" src={&self.props.project.image}/>
-              <div class="project_card_name">{&self.props.project.name}</div>
+              <img class="project_card_image" src={&self.props.project.preview}/>
+              <div class="project_card_name">{&self.props.project.title}</div>
               <div class="project_card_year">{&self.props.project.year}</div>
             </div>
         }
