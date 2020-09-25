@@ -16,11 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: davidB/rust-cargo-make@v1
-    - run: cargo install yew
-    - run: cargo install wasm-bindgen
-    - run: cargo install anyhow
-    - run: cargo install serde
     - name: Build
       run: cargo make build --verbose
     - name: Run tests
