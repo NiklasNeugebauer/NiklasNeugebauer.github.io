@@ -36,6 +36,6 @@ jobs:
           mv .gitignore_publish .gitignore
           git stash
           git checkout publish
-          git apply
+          git stash apply
           git add .
           git commit -m "publish changes"
