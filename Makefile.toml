@@ -4,4 +4,4 @@ args = ["build", "--dev", "--target", "web", "--out-name", "wasm", "--out-dir", 
 
 [tasks.serve]
 command = "simple-http-server"
-args = ["-i", "./static/", "-p", "3000", "--nocache", "--try-file", "./docs/index.html"]
+args = ["-i", "./docs/", "-p", "3000", "--nocache", "--try-file", "./docs/index.html"]
