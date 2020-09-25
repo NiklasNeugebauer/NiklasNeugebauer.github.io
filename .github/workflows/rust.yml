@@ -24,3 +24,12 @@ jobs:
       - uses: jetli/wasm-pack-action@v0.3.0
       - name: build
         run: wasm-pack build --target web --out-name wasm --out-dir ${{ env.OUTPUT_PATH }}
+
+      - name: publish
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout publish
+          mv .gitignore_publish .gitignore
+          git add .
+          git commit -m "publish changes"
