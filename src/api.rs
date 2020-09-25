@@ -9,7 +9,7 @@ pub type FetchResponse<T> = Response<Json<Result<T, Error>>>;
 type FetchCallback<T> = Callback<FetchResponse<T>>;
 
 pub fn get_projects(callback: FetchCallback<Vec<Project>>) -> FetchTask {
-    let req = Request::get("/projects/projects.json")
+    let req = Request::get("docs/projects/projects.json")
         .body(Nothing)
         .unwrap();
 
