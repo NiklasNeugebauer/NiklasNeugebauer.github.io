@@ -33,9 +33,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           rm docs/.gitignore
-          git add .
+          git add docs
           git stash
           git checkout publish
-          git stash apply
+          git checkout stash -- docs
           git add .
           git commit -m "publish changes"
