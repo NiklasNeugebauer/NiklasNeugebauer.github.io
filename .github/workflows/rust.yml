@@ -9,7 +9,6 @@ on:
 env:
   CARGO_TERM_COLOR: always
   OUTPUT_PATH: ${{ github.workspace }}/docs
-  PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 
 jobs:
   build:
@@ -21,7 +20,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          token: PUBLISH_TOKEN
+          token: ${{ secrets.PUBLISH_TOKEN }}
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
