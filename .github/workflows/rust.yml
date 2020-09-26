@@ -31,7 +31,7 @@ jobs:
 
       - name: publish
         run: |
-          git config user.name neugebauer-publish
+          git config user.name neugebauer-publisher
           git config user.email website@neugebauer.dev
           rm docs/.gitignore
           git add docs
