@@ -20,7 +20,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          token: ${{ secrets.PUBLISH_TOKEN }}
+          token: ${{ secrets.PUBLISHER_TOKEN }}
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
