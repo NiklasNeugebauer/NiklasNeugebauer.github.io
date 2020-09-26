@@ -9,6 +9,7 @@ on:
 env:
   CARGO_TERM_COLOR: always
   OUTPUT_PATH: ${{ github.workspace }}/docs
+  PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 
 jobs:
   build:
@@ -20,6 +21,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          token: PUBLISH_TOKEN
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
@@ -30,8 +32,8 @@ jobs:
 
       - name: publish
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name neugebauer-publish
+          git config user.email website@neugebauer.dev
           rm docs/.gitignore
           git add docs
           git stash
