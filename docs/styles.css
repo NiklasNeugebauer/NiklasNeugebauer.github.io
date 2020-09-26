@@ -64,7 +64,7 @@ body {
     height: 18px;
     border: 2px solid #333;
     border-top-color: #fff;
-    animation: loading_indicator_animation 1s infinite linear;
+    animation: loading_spinner_animation 1s infinite linear;
   }
   
   @keyframes loading_indicator_animation {
