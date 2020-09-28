@@ -1,7 +1,9 @@
 // src/components/project_card.rs
 
+use crate::route::Route;
 use crate::types::Project;
 use yew::prelude::*;
+use yew_router::components::RouterAnchor;
 
 pub struct ProjectCard {
     props: Props
@@ -30,11 +32,14 @@ impl Component for ProjectCard {
     }
 
     fn view(&self) -> Html {
+        type Anchor = RouterAnchor<Route>;
         html! {
             <div class="project_card_container">
-              <img class="project_card_image" src={&self.props.project.preview}/>
-              <div class="project_card_name">{&self.props.project.title}</div>
-              <div class="project_card_year">{&self.props.project.year}</div>
+              <Anchor route=Route::ProjectDetail(self.props.project.id) classes="project_card_anchor">
+                <img class="project_card_image" src={&self.props.project.preview}/>
+                <div class="project_card_name">{&self.props.project.title}</div>
+                <div class="project_card_year">{&self.props.project.year}</div>
+              </Anchor>
             </div>
         }
     }

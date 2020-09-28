@@ -15,3 +15,11 @@ pub fn get_projects(callback: FetchCallback<Vec<Project>>) -> FetchTask {
 
     FetchService::fetch(req, callback).unwrap()
 }
+
+pub fn get_project(id: i32, callback: FetchCallback<Project>) -> FetchTask {
+    let req = Request::get(format!("/projects/{}.json", id))
+            .body(Nothing)
+            .unwrap();
+            
+    FetchService::fetch(req, callback).unwrap()
+}
