@@ -1,0 +1,10 @@
+
+{
+    "id": 1,
+        "title": "Website",
+        "brief": "Your'e looking at it.",
+        "description": "This website is written fully in rust compiled to web-assembly.",
+        "preview": "/img/wasm_logo.png",
+        "media": "/img/wasm_logo.png",
+        "year": "2020"
+}
