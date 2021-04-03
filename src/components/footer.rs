@@ -1,20 +1,16 @@
-// src/pages/home.rs
+// src/pages/footer.rs
 
 use yew::prelude::*;
 
-use crate::components::CardCollection;
-use crate::components::NavBar;
-use crate::components::Footer;
-
 struct State {}
 
-pub struct Home {
+pub struct Footer {
     state: State,
 }
 
 pub enum Msg {}
 
-impl Component for Home {
+impl Component for Footer {
     type Message = Msg;
     type Properties = ();
 
@@ -33,12 +29,23 @@ impl Component for Home {
     fn view(&self) -> Html {
 
         html! {<div>
-            <NavBar/>
-            <div class="stripe_anchor">
-                <h4>{ "Home" }</h4>
-                <img class="image_centered" src="/img/Logo.svg"/>
+            <div class="footer">
+                <table>
+                <tr>
+                <td width="50%">
+                {"Text\n
+                idk\n
+                This is more Text"}
+                </td>
+                <td width="50%">
+                {"Other Text
+                Wow, such information
+                So much text.
+                "}
+                </td>
+              </tr>
+                </table>
             </div>
-            <Footer/>
         </div>}
     }
 }

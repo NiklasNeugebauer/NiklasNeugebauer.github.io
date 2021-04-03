@@ -1,4 +1,5 @@
 // src/api.rs
+use crate::types::NavObject;
 use crate::types::Project;
 use anyhow::Error;
 use yew::callback::Callback;
@@ -18,8 +19,14 @@ pub fn get_projects(callback: FetchCallback<Vec<Project>>) -> FetchTask {
 
 pub fn get_project(id: i32, callback: FetchCallback<Project>) -> FetchTask {
     let req = Request::get(format!("/projects/{}.json", id))
-            .body(Nothing)
-            .unwrap();
-            
+        .body(Nothing)
+        .unwrap();
+
+    FetchService::fetch(req, callback).unwrap()
+}
+
+pub fn get_nav_objects(callback: FetchCallback<Vec<NavObject>>) -> FetchTask {
+    let req = Request::get("/general/navbar.json").body(Nothing).unwrap();
+
     FetchService::fetch(req, callback).unwrap()
 }

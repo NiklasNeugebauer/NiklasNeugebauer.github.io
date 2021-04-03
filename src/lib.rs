@@ -2,10 +2,9 @@
 mod api;
 mod app;
 mod components;
+mod pages;
 mod route;
 mod types;
-mod pages;
-
 
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;

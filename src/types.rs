@@ -9,5 +9,11 @@ pub struct Project {
     pub description: String,
     pub preview: String,
     pub media: String,
-    pub year: String
+    pub year: String,
+}
+
+#[derive(Deserialize, Serialize, Clone, Debug)]
+pub struct NavObject {
+    pub text: String,
+    pub link: String
 }

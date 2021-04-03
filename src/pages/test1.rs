@@ -6,8 +6,6 @@ use yew::format::Json;
 use yew::prelude::*;
 use yew::services::fetch::FetchTask;
 
-use crate::components::NavBar;
-
 struct State {
     project: Option<Project>,
     get_project_error: Option<Error>,
@@ -87,30 +85,23 @@ impl Component for ProjectDetail {
     fn view(&self) -> Html {
         if let Some(ref project) = self.state.project {
             html! {
-                <div>
-                <NavBar/>
                 <div class="project_detail_container">
                     <img class="project_detail_image" src={&project.media}/>
                     <div class="project_card_name">{&project.title}</div>
                     <div style="margin: 10px 0; line-height: 24px;">{&project.description}</div>
                     <div class="project_card_price">{&project.year}</div>
                 </div>
-                </div>
             }
         } else if !self.state.get_project_loaded {
             html! {
-                <div>
-                <NavBar/>
                 <div class="loading_spinner_container">
                     <div class="loading_spinner"></div>
                     <div class="loading_spinner_text">{"Loading ..."}</div>
-                </div>
                 </div>
             }
         } else {
             html! {
                 <div>
-                    <NavBar/>
                     <span>{"Error loading project! :("}</span>
                 </div>
             }

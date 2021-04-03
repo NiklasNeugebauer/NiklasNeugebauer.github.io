@@ -6,14 +6,13 @@ use yew::prelude::*;
 use yew_router::components::RouterAnchor;
 
 pub struct ProjectCard {
-    props: Props
+    props: Props,
 }
 
 #[derive(Properties, Clone)]
 pub struct Props {
-    pub project: Project
+    pub project: Project,
 }
-
 
 impl Component for ProjectCard {
     type Message = ();
