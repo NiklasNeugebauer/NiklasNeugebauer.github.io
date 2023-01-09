@@ -15,3 +15,5 @@ Start build:
 Serve site:
 
     cargo make serve
+
+This project builds heavily on a blog post by Sheshbabu Chinnakonda, which can be found at https://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/
