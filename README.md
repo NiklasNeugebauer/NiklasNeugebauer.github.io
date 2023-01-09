@@ -5,7 +5,7 @@
 Install:
 
     cargo install wasm-pack
-    argo install cargo-make         
+    cargo install cargo-make         
     cargo install simple-http-server
 
 Start build:
