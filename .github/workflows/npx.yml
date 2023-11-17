@@ -1,0 +1,40 @@
+name: npx
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  OUTPUT_PATH: ${{ github.workspace }}/docs
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          #persist-credentials: false
+          fetch-depth: 0
+          #token: ${{ secrets.PUBLISHER_TOKEN }}
+      - name: build
+        run: |
+          apt-get install nodejs
+          npm install tailwindcss
+          npx tailwindcss build -i tailwind.css -o docs/output.css
+
+      - name: publish
+        run: |
+          git config user.name neugebauer-publisher
+          git config user.email website@neugebauer.dev
+          rm docs/.gitignore
+          git add docs
+          git stash
+          git checkout publish
+          git checkout stash -- docs
+          git add .
+          git commit -m "publish changes"
+          git push
