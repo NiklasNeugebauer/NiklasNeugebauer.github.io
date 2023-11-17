@@ -1,7 +1,0 @@
-/target
-/src
-/.github
-Cargo.lock
-Cargo.toml
-Makefile.toml
-.gitignore_publish
