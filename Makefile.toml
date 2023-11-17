@@ -1,7 +1,0 @@
-[tasks.build]
-command = "wasm-pack"
-args = ["build", "--dev", "--target", "web", "--out-name", "wasm", "--out-dir", "./docs"]
-
-[tasks.serve]
-command = "simple-http-server"
-args = ["-i", "./docs/", "-p", "3000", "--nocache", "--try-file", "./docs/index.html"]
