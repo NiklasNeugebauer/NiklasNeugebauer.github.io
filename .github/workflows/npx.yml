@@ -22,7 +22,7 @@ jobs:
           #token: ${{ secrets.PUBLISHER_TOKEN }}
       - name: build
         run: |
-          sudo apt-get install nodejs
+          sudo apt-get update && sudo apt-get install nodejs
           npm install tailwindcss
           npx tailwindcss build -i tailwind.css -o docs/output.css
 
